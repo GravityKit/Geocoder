@@ -150,6 +150,10 @@ class GoogleMapsProvider extends AbstractProvider implements LocaleAwareProvider
             throw new InvalidCredentialsException(sprintf('API key is invalid %s', $query));
         }
 
+	    if ('REQUEST_DENIED' === $json->status && 'This API key is not authorized to use this service or API.' === $json->error_message) {
+		    throw new InvalidCredentialsException('API key is not authorized to use this service or API.' );
+	    }
+
         // you are over your quota
         if ('OVER_QUERY_LIMIT' === $json->status) {
             throw new QuotaExceededException(sprintf('Daily quota exceeded %s', $query));
