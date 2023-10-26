@@ -19,7 +19,7 @@ use Geocoder\HttpAdapter\HttpAdapterInterface;
  */
 class NominatimProvider extends AbstractProvider implements LocaleAwareProviderInterface
 {
-	private string $rootUrl;
+	private $rootUrl;
 
 	/**
      * @param HttpAdapterInterface $adapter An HTTP adapter.
