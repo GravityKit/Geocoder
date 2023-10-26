@@ -19,7 +19,9 @@ use Geocoder\HttpAdapter\HttpAdapterInterface;
  */
 class NominatimProvider extends AbstractProvider implements LocaleAwareProviderInterface
 {
-    /**
+	private string $rootUrl;
+
+	/**
      * @param HttpAdapterInterface $adapter An HTTP adapter.
      * @param string               $rootUrl Root URL of the nominatim server
      * @param string               $locale  A locale (optional).
