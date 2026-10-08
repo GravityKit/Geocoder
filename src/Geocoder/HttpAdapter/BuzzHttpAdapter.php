@@ -25,7 +25,7 @@ class BuzzHttpAdapter implements HttpAdapterInterface
     /**
      * @param Browser $browser Browser object
      */
-    public function __construct(Browser $browser = null)
+    public function __construct(?Browser $browser = null)
     {
         $this->browser = null === $browser ? new Browser() : $browser;
     }

@@ -29,7 +29,7 @@ class GuzzleHttpAdapter implements HttpAdapterInterface
     /**
      * @param ClientInterface $client Client object
      */
-    public function __construct(ClientInterface $client = null)
+    public function __construct(?ClientInterface $client = null)
     {
         $this->client = null === $client ? new Client() : $client;
     }

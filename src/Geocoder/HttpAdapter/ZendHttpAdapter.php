@@ -25,7 +25,7 @@ class ZendHttpAdapter implements HttpAdapterInterface
     /**
      * @param Client $client Client object
      */
-    public function __construct(Client $client = null)
+    public function __construct(?Client $client = null)
     {
         $this->client = null === $client ? new Client() : $client;
     }

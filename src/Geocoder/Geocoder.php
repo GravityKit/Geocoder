@@ -55,7 +55,7 @@ class Geocoder implements GeocoderInterface
      * @param ResultFactoryInterface $resultFactory
      * @param integer                $maxResults
      */
-    public function __construct(ProviderInterface $provider = null, ResultFactoryInterface $resultFactory = null, $maxResults = self::MAX_RESULTS)
+    public function __construct(?ProviderInterface $provider = null, ?ResultFactoryInterface $resultFactory = null, $maxResults = self::MAX_RESULTS)
     {
         $this->provider = $provider;
 
@@ -66,7 +66,7 @@ class Geocoder implements GeocoderInterface
     /**
      * @param ResultFactoryInterface $resultFactory
      */
-    public function setResultFactory(ResultFactoryInterface $resultFactory = null)
+    public function setResultFactory(?ResultFactoryInterface $resultFactory = null)
     {
         $this->resultFactory = $resultFactory ?: new DefaultResultFactory();
     }
